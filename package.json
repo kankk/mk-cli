@@ -1,0 +1,36 @@
+{
+  "name": "mk-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.ts",
+  "bin": {
+    "mk": "bin/index.js"
+  },
+  "scripts": {
+    "dev": "npm run clean & tsc -w",
+    "clean": "rimraf lib/",
+    "build": "npm run clean & tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [],
+  "author": "kankk",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/commander": "^2.12.2",
+    "@types/inquirer": "^8.2.0",
+    "@types/shelljs": "^0.8.11",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^9.1.0",
+    "inquirer": "^8.2.2",
+    "shelljs": "^0.8.5"
+  }
+}
