@@ -2,10 +2,9 @@ import { Command } from 'commander';
 
 import { cleanNodeModules } from './commands/clean';
 
-console.log('Hello World');
-
 const program = new Command();
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 program.version(require('../package.json').version);
 
 program
