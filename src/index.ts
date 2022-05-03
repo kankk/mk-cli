@@ -2,6 +2,7 @@ import { Command } from 'commander';
 
 import { cleanNodeModules } from './commands/clean';
 import { operateCliConfig } from './commands/config';
+import { operateGit } from './commands/git';
 
 const program = new Command();
 
@@ -17,5 +18,7 @@ program
   .command('config')
   .description('cli local config(.mkrc.yaml)')
   .action(operateCliConfig);
+
+program.command('git').description('git operations').action(operateGit);
 
 program.parse(process.argv);

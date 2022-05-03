@@ -1,4 +1,5 @@
 import chalk, { Chalk } from 'chalk';
+import shell from 'shelljs';
 
 const TAG = '[mk-cli]';
 
@@ -10,5 +11,10 @@ const Logger = {
   info: (msg: string) => console.log(chalk.cyan(`${TAG} ${msg}`)),
   success: (msg: string) => console.log(chalk.green(`${TAG} ${msg}`)),
 };
+
+export function getShellExecText(command: string) {
+  const ans = shell.exec(command, { silent: true });
+  return ans?.stdout?.replace(/\n/, '');
+}
 
 export default Logger;

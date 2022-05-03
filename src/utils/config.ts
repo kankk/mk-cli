@@ -25,7 +25,6 @@ class Config {
     try {
       const homeEnvTag = process.platform === 'win32' ? 'USERPROFILE' : 'HOME';
       const homePath = process.env[homeEnvTag];
-      Logger.info(`homePath: ${homePath}`);
       if (!homePath) {
         throw new Error(
           `配置初始化失败: process.env.${homeEnvTag}: ${homePath}`
