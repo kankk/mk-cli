@@ -3,6 +3,7 @@ import { Command } from 'commander';
 import { cleanNodeModules } from './commands/clean';
 import { operateCliConfig } from './commands/config';
 import { operateGit } from './commands/git';
+import { operateNpm } from './commands/npm';
 
 const program = new Command();
 
@@ -20,5 +21,11 @@ program
   .action(operateCliConfig);
 
 program.command('git').description('git operations').action(operateGit);
+
+program
+  .command('npm')
+  .description('npm operations')
+  .option('-r, --registry', 'npm config set registry', false)
+  .action(operateNpm);
 
 program.parse(process.argv);
