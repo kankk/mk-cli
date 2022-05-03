@@ -20,7 +20,11 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "useUnknownInCatchVariables": false
+    "useUnknownInCatchVariables": false,
+    "paths": {
+      "~/*": ["./src/*"],
+      "@utils/*": ["./src/utils/*"]
+    }
   },
   "include": ["src/**/*"]
 }
