@@ -8,6 +8,7 @@ import Logger from '../utils/logger';
 export interface IConfigUser {
   name: string;
   npmName: string;
+  npmScope: string;
   email: string;
   desc: string;
   registry: string;
@@ -18,11 +19,13 @@ export interface IConfigUser {
 const getDefaultConfig = () => ({
   git: {
     github: {
-      name: 'kankk',
-      npmName: 'jianqihua',
-      email: '286454796@qq.com',
-      desc: 'Github 账号',
-      token: '',
+      name: '',
+      npmName: '',
+      npmScope: '',
+      email: '',
+      desc: '',
+      registry: '',
+      color: '',
     },
   },
 });
