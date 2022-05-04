@@ -3,7 +3,7 @@ import fs from 'fs';
 import shell from 'shelljs';
 import YAML from 'yaml';
 import { cloneDeep } from 'lodash';
-import Logger from '@utils/logger';
+import Logger from '../utils/logger';
 
 // 默认 cli 配置文件
 const getDefaultConfig = () => ({

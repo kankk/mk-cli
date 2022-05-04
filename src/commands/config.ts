@@ -1,6 +1,6 @@
 import inquirer from 'inquirer';
-import Logger from '@utils/logger';
-import config from '@utils/config';
+import Logger from '../utils/logger';
+import config from '../utils/config';
 
 const getConfigOperation = async () => {
   const questions = [

@@ -1,6 +1,6 @@
 import rimraf from 'rimraf';
 import path from 'path';
-import Logger from '@utils/logger';
+import Logger from '../utils/logger';
 
 const cwdPath = process.cwd();
 

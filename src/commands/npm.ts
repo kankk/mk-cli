@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 import shell from 'shelljs';
 import Logger, { getShellExecText } from '../utils/logger';
-import config from '@utils/config';
+import config from '../utils/config';
 
 const gitConfig = config.getConfig('user');
 
