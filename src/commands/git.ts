@@ -1,14 +1,14 @@
 import Logger, { getShellExecText } from '../utils/logger';
 import config from '../utils/config';
 
-const gitConfig = config.getConfig('user');
+const userConfig = config.getConfig('user');
 
 // 展示项目 git.user 配置
 export const showProjectGitUser = () => {
   const projectUserName = getShellExecText('git config user.name');
   const projectUserEmail = getShellExecText('git config user.email');
 
-  const projectUser: any = Object.values(gitConfig).find(
+  const projectUser: any = Object.values(userConfig).find(
     (item: any) => item.name === projectUserName
   );
   const projectUserColor = projectUser?.color ?? 'white';
@@ -25,7 +25,7 @@ export function showGlobalGitUser() {
   const globalUserName = getShellExecText('git config --global user.name');
   const globalUserEmail = getShellExecText('git config --global user.email');
 
-  const globalUser: any = Object.values(gitConfig).find(
+  const globalUser: any = Object.values(userConfig).find(
     (item: any) => item.name === globalUserName
   );
   const globalUserColor = globalUser?.color ?? 'white';

@@ -4,13 +4,13 @@ import { Chalk } from 'chalk';
 import Logger, { getShellExecText } from '../utils/logger';
 import config, { IConfigUser } from '../utils/config';
 
-const gitConfig = config.getConfig('user') as Record<string, IConfigUser>;
+const userConfig = config.getConfig('user') as Record<string, IConfigUser>;
 
 // 展示 npm registry
 export function showRegistry() {
   const registry = getShellExecText('npm config get registry');
 
-  const user = Object.values(gitConfig).find(
+  const user = Object.values(userConfig).find(
     (item) => item.registry === registry
   );
   const userColor = (user?.color ?? 'white') as keyof Chalk;
@@ -31,13 +31,15 @@ const setRegistryByUser = async () => {
       type: 'list',
       name: 'user',
       message: '设置 registry 的用户',
-      choices: Object.entries(gitConfig).map(([user, info]: [string, any]) => ({
-        name: `${info.desc}: <${info.registry}> [${info.desc}]`,
-        value: user,
-      })),
+      choices: Object.entries(userConfig).map(
+        ([user, info]: [string, any]) => ({
+          name: `${info.desc}: <${info.registry}> [${info.desc}]`,
+          value: user,
+        })
+      ),
     },
   ]);
-  const info = gitConfig[user];
+  const info = userConfig[user];
   const { registry } = info;
   shell.exec(`npm config set registry ${registry}`);
   showRegistry();
@@ -48,7 +50,7 @@ const checkNpmUserForPublish = () => {
   const currentUser = getShellExecText('npm whoami');
   const currentRegistry = getShellExecText('npm config get registry');
 
-  const userInfo = Object.values(gitConfig).find(
+  const userInfo = Object.values(userConfig).find(
     (item) => item.npmName === currentUser
   );
 

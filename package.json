@@ -11,7 +11,7 @@
     "clean": "rimraf lib/",
     "build": "npm run clean && tsc",
     "prepublishOnly": "npm run build",
-    "p": "npm version patch && git push --follow-tags && npm publish --access public"
+    "p": "mk project && npm version patch && git push --follow-tags && npm publish --access public"
   },
   "repository": {
     "type": "git",
