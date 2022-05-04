@@ -25,6 +25,7 @@ program.command('git').description('git operations').action(operateGit);
 program
   .command('npm')
   .description('npm operations')
+  .option('-c, --check', 'check npm publish user', false)
   .option('-r, --registry', 'npm config set registry', false)
   .action(operateNpm);
 

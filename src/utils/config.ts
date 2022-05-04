@@ -5,11 +5,21 @@ import YAML from 'yaml';
 import { cloneDeep } from 'lodash';
 import Logger from '../utils/logger';
 
+export interface IConfigUser {
+  name: string;
+  npmName: string;
+  email: string;
+  desc: string;
+  registry: string;
+  color: string;
+}
+
 // 默认 cli 配置文件
 const getDefaultConfig = () => ({
   git: {
     github: {
       name: 'kankk',
+      npmName: 'jianqihua',
       email: '286454796@qq.com',
       desc: 'Github 账号',
       token: '',
