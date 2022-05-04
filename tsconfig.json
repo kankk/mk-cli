@@ -26,15 +26,5 @@
       "@utils/*": ["./src/utils/*"]
     }
   },
-  "include": ["src/**/*"],
-  "tsc-alias": {
-    "verbose": false,
-    "resolveFullPaths": true,
-    "replacers": {
-      "@utils/*": {
-        "enabled": true,
-        "file": "./src/utils/*"
-      }
-    }
-  }
+  "include": ["src/**/*"]
 }

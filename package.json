@@ -7,9 +7,9 @@
     "mk": "bin/index.js"
   },
   "scripts": {
-    "dev": "npm run clean && tsc -w & tsc-alias -w",
+    "dev": "npm run clean && tsc -w",
     "clean": "rimraf lib/",
-    "build": "npm run clean && tsc & tsc-alias",
+    "build": "npm run clean && tsc",
     "prepublishOnly": "npm run build",
     "p": "npm version patch && git push --follow-tags && npm publish"
   },
@@ -39,7 +39,6 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.6.2",
-    "tsc-alias": "^1.6.7",
     "typescript": "^4.6.3"
   },
   "dependencies": {
