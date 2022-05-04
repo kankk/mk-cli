@@ -1,1 +1,1 @@
-# mk-cli
+# @mangokk/cli

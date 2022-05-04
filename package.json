@@ -1,5 +1,5 @@
 {
-  "name": "mk-cli",
+  "name": "@mangokk/cli",
   "version": "1.0.0",
   "description": "",
   "main": "bin/index.ts",
@@ -13,6 +13,14 @@
     "prepublishOnly": "npm run build",
     "p": "npm version patch && git push --follow-tags && npm publish"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kankk/mk-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kankk/mk-cli/issues"
+  },
+  "homepage": "https://github.com/kankk/mk-cli#readme",
   "keywords": [],
   "author": "kankk",
   "license": "MIT",
