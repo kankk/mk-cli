@@ -32,7 +32,8 @@ program
 
 program
   .command('project')
-  .description('检查当前项目的配置')
+  .description('当前项目的配置')
+  .option('-u, --user', '修改当前项目的 user', false)
   .action(projectInfo);
 
 program.parse(process.argv);
